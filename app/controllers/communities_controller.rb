@@ -6,6 +6,7 @@ class CommunitiesController < ApplicationController
   end
 
   def show
+    @posts = @community.posts
   end
 
   def new
@@ -27,7 +28,7 @@ class CommunitiesController < ApplicationController
   def set_community
     @community = Community.find(params[:id])
   end  
-  def communities_values
+  def communities_value
     params.require(:community).permit(:name, :url, :rules)
   end
 end
