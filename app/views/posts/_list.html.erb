@@ -1,9 +1,12 @@
 <% posts.each do |post| %>
 <div class="card p-3 mb-3">
   <div class="row">
-    <div class="col-1">
-      <span class="fa fa-arrow-up upvote"></span>
-      <span class="fa fa-arrow-down downvote"></span>
+    <div class="col-1 text-center">
+      <div id="vote-actions-<%= post.id %>" class="vote" data-id="<%= post.id %>">
+        <div class="fa fa-arrow-up upvote <%= is_upvoted post %>"></div>
+        <span class="font-weight-bold score"><%= post.score %></span>
+        <div class="fa fa-arrow-down downvote <%= is_downvoted post %>"></div>
+      </div>
     </div>
     <div class="col-11">
       <h4 class="mb-1"><%= link_to post.title, community_post_path(post.community_id, post)%></h4>
