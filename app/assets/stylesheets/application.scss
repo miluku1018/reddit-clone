@@ -21,6 +21,12 @@
     color: rgba(100, 100, 100, 1);
   }
 }
+
+.header {
+  position: fixed;
+  background-color: #fff;
+  z-index: 1;
+}
 .community {
   .h5 {
     background-color: #A5A4A4;
